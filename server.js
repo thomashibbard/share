@@ -18,11 +18,12 @@ fs.readdirAsync(fiddles).bind({})
 	.then(fiddleFilesArr => {
 		// checkHashExists(fiddleFiles, hashTestStr);
 		var hash = getHash(fiddleFilesArr);
-		var hashedDir = path.join(fiddles, hash);
-		return fs.mkdirAsync(hashedDir);
+		this.hashedDir = path.join(fiddles, hash);
+		console.log('THIS FUCKING HERES', this.hashedDir)
+		return fs.mkdirAsync(this.hashedDir);
 })
 	.then( (data) => {
-		console.log('expected fname to be', this.fname)
+		console.log('expected hashedDir to be', this.hashedDir)
 	})
 	.catch(err => {
 		console.error('error reading fiddles dir', err);
