@@ -15,5 +15,8 @@
     "ncp": "^2.0.0",
     "path": "^0.12.7",
     "request": "^2.75.0"
+  },
+  "bin":{
+    "fiddle": "index.js"
   }
 }
